@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://68f6r5q8w5yr"]
+
+[ext_resource type="FontFile" uid="uid://dtq3cdh1f0lgk" path="res://resources/theme/Bitfantasy.ttf" id="1_xdn7f"]
+
+[resource]
+default_font = ExtResource("1_xdn7f")
+default_font_size = 16
