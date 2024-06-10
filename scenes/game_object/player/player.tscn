@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://dx8vufmis1ott"]
+[gd_scene load_steps=14 format=3 uid="uid://dx8vufmis1ott"]
 
 [ext_resource type="Script" path="res://scenes/game_object/player/player.gd" id="1_xg37j"]
 [ext_resource type="PackedScene" uid="uid://b8yjtut3dqfy4" path="res://scenes/ability/sword_ability_controller/sword_ability_controller.tscn" id="2_6pycc"]
+[ext_resource type="PackedScene" uid="uid://dlt4ojf2nme3u" path="res://scenes/Component/velocity_component.tscn" id="2_6qhgv"]
 [ext_resource type="Texture2D" uid="uid://bet7ba11gk3ht" path="res://scenes/game_object/player/player.png" id="2_pnmci"]
 [ext_resource type="PackedScene" uid="uid://dgw8sumi3vsna" path="res://scenes/Component/health_component.tscn" id="3_453lr"]
 
@@ -91,16 +92,16 @@ _data = {
 "walk": SubResource("Animation_6so7o")
 }
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i1w7e"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dk415"]
 bg_color = Color(0.247059, 0.14902, 0.192157, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ck5om"]
-bg_color = Color(0.262745, 0.882353, 0.701961, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dp5pn"]
+bg_color = Color(0.305882, 0.866667, 0.698039, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(0.247059, 0.14902, 0.192157, 1)
+border_color = Color(0.25098, 0.14902, 0.188235, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eu5de"]
 radius = 32.0
@@ -121,6 +122,10 @@ libraries = {
 "": SubResource("AnimationLibrary_jhky5")
 }
 
+[node name="VelocityComponent" parent="." instance=ExtResource("2_6qhgv")]
+max_speed = 90
+acceleration = 25.0
+
 [node name="Abilities" type="Node" parent="."]
 
 [node name="SwordAbilityController" parent="Abilities" instance=ExtResource("2_6pycc")]
@@ -139,8 +144,8 @@ offset_right = 16.0
 offset_bottom = -19.0
 pivot_offset = Vector2(16, 3)
 mouse_filter = 2
-theme_override_styles/background = SubResource("StyleBoxFlat_i1w7e")
-theme_override_styles/fill = SubResource("StyleBoxFlat_ck5om")
+theme_override_styles/background = SubResource("StyleBoxFlat_dk415")
+theme_override_styles/fill = SubResource("StyleBoxFlat_dp5pn")
 max_value = 1.0
 value = 0.5
 show_percentage = false
